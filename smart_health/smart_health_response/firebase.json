@@ -1,0 +1,29 @@
+{
+  "firestore": {
+    "rules": "firestore.rules",
+    "indexes": "firestore.indexes.json"
+  },
+  "flutter": {
+    "platforms": {
+      "android": {
+        "default": {
+          "projectId": "smart-health-response",
+          "appId": "1:951638335639:android:0e802eff377c6bbb6ac9d2",
+          "fileOutput": "android/app/google-services.json"
+        }
+      },
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "smart-health-response",
+          "configurations": {
+            "android": "1:951638335639:android:0e802eff377c6bbb6ac9d2",
+            "ios": "1:951638335639:ios:e1c6d49b1f5cd42c6ac9d2",
+            "macos": "1:951638335639:ios:e1c6d49b1f5cd42c6ac9d2",
+            "web": "1:951638335639:web:78ce47fc785d45d36ac9d2",
+            "windows": "1:951638335639:web:a75247e0abfcf9056ac9d2"
+          }
+        }
+      }
+    }
+  }
+}

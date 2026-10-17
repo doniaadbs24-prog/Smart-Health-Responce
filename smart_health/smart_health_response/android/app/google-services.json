@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "951638335639",
+    "project_id": "smart-health-response",
+    "storage_bucket": "smart-health-response.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:951638335639:android:0e802eff377c6bbb6ac9d2",
+        "android_client_info": {
+          "package_name": "com.example.smart_health_response"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAigm3MwN1IA2hiUTH7ZL3ZhwxmYdeNgL4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

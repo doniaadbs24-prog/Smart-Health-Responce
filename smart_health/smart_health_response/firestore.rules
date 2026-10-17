@@ -1,0 +1,107 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function signedIn() { return request.auth != null; }
+    function isOwner(uid) { return request.auth.uid == uid; }
+    function role() {
+      return get(/databases/$(database)/documents/users/$(request.auth.uid)).data.userType;
+    }
+    function isAdmin()     { return signedIn() && role() == 'admin'; }
+    function isResponder() { return signedIn() && role() == 'responder'; }
+    function isFacility()  { return signedIn() && role() == 'facility'; }
+    function isReporter()  { return signedIn() && role() == 'reporter'; }
+
+    match /users/{uid} {
+      allow read:   if signedIn() && (isOwner(uid) || isAdmin());
+      allow create: if signedIn() && isOwner(uid);
+      allow update: if isOwner(uid) || isAdmin();
+      allow delete: if isAdmin();
+    }
+
+    match /reporters/{uid} {
+      allow read, write: if isOwner(uid) || isAdmin();
+    }
+
+    match /responders/{uid} {
+      // Anyone signed-in can read responder profiles (Reporter sees responder during a case).
+      allow read:   if signedIn();
+      allow create: if isOwner(uid);
+      allow update: if isOwner(uid) || isAdmin();
+      allow delete: if isAdmin();
+    }
+
+    match /facilities/{facilityId} {
+      allow read:   if signedIn();
+      allow create, update: if signedIn() && (isOwner(facilityId) || isAdmin());
+      allow delete: if isAdmin();
+    }
+
+    match /cases/{caseId} {
+      allow read: if signedIn() && (
+        resource.data.reporterId == request.auth.uid ||
+        resource.data.responderId == request.auth.uid ||
+        resource.data.facilityId == request.auth.uid ||
+        isAdmin()
+      );
+      allow create: if isReporter() && request.resource.data.reporterId == request.auth.uid;
+      allow update: if signedIn() && (
+        resource.data.reporterId == request.auth.uid ||
+        resource.data.responderId == request.auth.uid ||
+        resource.data.facilityId == request.auth.uid ||
+        isAdmin() ||
+        // Allow any signed-in responder to claim an unassigned case (accept flow).
+        (isResponder() && resource.data.responderId == null)
+      );
+
+      match /alerts/{alertId} {
+        allow read:   if signedIn();
+        allow create: if signedIn();
+        allow update: if signedIn();
+      }
+
+      match /messages/{msgId} {
+        allow read, create: if signedIn();
+      }
+
+      match /handovers/{docId} {
+        allow read, write: if signedIn();
+      }
+
+      match /closures/{docId} {
+        allow read, write: if signedIn();
+      }
+    }
+
+    match /aeds/{aedId} {
+      allow read:  if signedIn();
+      allow write: if isAdmin();
+    }
+
+    match /ratings/{ratingId} {
+      allow read:   if signedIn();
+      allow create: if signedIn();
+    }
+
+    match /first_aid_guides/{guideId} {
+      allow read:  if true; // Public — first aid is critical safety content.
+      allow write: if isAdmin();
+    }
+
+    match /audit_logs/{logId} {
+      allow read:   if isAdmin();
+      allow create: if signedIn();
+    }
+
+    match /system_config/{configId} {
+      allow read:  if signedIn();
+      allow write: if isAdmin();
+    }
+
+    match /notifications/{nId} {
+      allow read, update: if signedIn() && resource.data.userId == request.auth.uid;
+      // Allow any signed-in user to push notifications (admin broadcast / SOS fan-out).
+      allow create: if signedIn();
+    }
+  }
+}

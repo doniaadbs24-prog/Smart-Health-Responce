@@ -1,0 +1,121 @@
+[
+  {
+    "guideId": "fa_cpr",
+    "guidanceType": "cpr",
+    "title": "CPR (Cardiopulmonary Resuscitation)",
+    "description": "Lifesaving technique for cardiac arrest victims who are unresponsive and not breathing normally.",
+    "prerequisites": ["Confirm scene safety", "Ensure no head/neck injury before moving"],
+    "warnings": [
+      "Do not perform CPR on conscious individuals",
+      "Use minimum force on infants and children",
+      "Switch performers every 2 minutes to maintain quality"
+    ],
+    "emergencyHotline": "997",
+    "isActive": true,
+    "createdAt": "2025-01-01T00:00:00Z",
+    "updatedAt": "2025-01-01T00:00:00Z",
+    "steps": [
+      { "stepNumber": 1, "stepTitle": "Check responsiveness", "stepDescription": "Tap the shoulders firmly and shout 'Are you OK?'.", "duration": 5 },
+      { "stepNumber": 2, "stepTitle": "Call for help", "stepDescription": "Dial 997 or send the SOS alert. Ask someone to find an AED.", "duration": 30 },
+      { "stepNumber": 3, "stepTitle": "Open the airway", "stepDescription": "Tilt the head back gently and lift the chin.", "duration": 5 },
+      { "stepNumber": 4, "stepTitle": "Check breathing", "stepDescription": "Look, listen, and feel for breathing for no more than 10 seconds.", "duration": 10 },
+      { "stepNumber": 5, "stepTitle": "Begin chest compressions", "stepDescription": "Place hands at the center of the chest. Push hard and fast at 100-120 per minute, 2 inches deep.", "duration": 0 },
+      { "stepNumber": 6, "stepTitle": "Give rescue breaths", "stepDescription": "After 30 compressions, deliver 2 breaths, watching for chest rise.", "duration": 5 },
+      { "stepNumber": 7, "stepTitle": "Continue CPR", "stepDescription": "Repeat 30 compressions and 2 breaths until help arrives or AED is available.", "duration": 0 }
+    ]
+  },
+  {
+    "guideId": "fa_choking",
+    "guidanceType": "choking",
+    "title": "Choking (Heimlich Maneuver)",
+    "description": "Use when someone cannot speak, breathe, or cough due to airway obstruction.",
+    "prerequisites": ["Confirm choking signs (clutching throat, no air)"],
+    "warnings": [
+      "Do not perform abdominal thrusts on infants under 1 year",
+      "Stop if the object is dislodged",
+      "Seek medical attention even after success"
+    ],
+    "emergencyHotline": "997",
+    "isActive": true,
+    "createdAt": "2025-01-01T00:00:00Z",
+    "updatedAt": "2025-01-01T00:00:00Z",
+    "steps": [
+      { "stepNumber": 1, "stepTitle": "Confirm choking", "stepDescription": "Ask 'Are you choking?'. If they cannot respond, act fast." },
+      { "stepNumber": 2, "stepTitle": "Position yourself", "stepDescription": "Stand behind the person, wrap your arms around their waist." },
+      { "stepNumber": 3, "stepTitle": "Make a fist", "stepDescription": "Place your fist (thumb side in) just above the navel, well below the breastbone." },
+      { "stepNumber": 4, "stepTitle": "Perform thrusts", "stepDescription": "Grasp your fist with the other hand and give quick upward thrusts." },
+      { "stepNumber": 5, "stepTitle": "Repeat", "stepDescription": "Continue until the object is expelled or the person becomes unconscious." },
+      { "stepNumber": 6, "stepTitle": "If unconscious", "stepDescription": "Lay them down and begin CPR. Check the mouth before each breath." }
+    ]
+  },
+  {
+    "guideId": "fa_bleeding",
+    "guidanceType": "bleeding",
+    "title": "Severe Bleeding Control",
+    "description": "Stop life-threatening external bleeding before help arrives.",
+    "prerequisites": ["Wear gloves if available", "Use clean cloth or sterile gauze"],
+    "warnings": [
+      "Do not remove embedded objects",
+      "Do not apply tourniquet to neck, head, or torso",
+      "Loosen tourniquet only on medical advice"
+    ],
+    "emergencyHotline": "997",
+    "isActive": true,
+    "createdAt": "2025-01-01T00:00:00Z",
+    "updatedAt": "2025-01-01T00:00:00Z",
+    "steps": [
+      { "stepNumber": 1, "stepTitle": "Ensure safety", "stepDescription": "Move the person away from danger if needed." },
+      { "stepNumber": 2, "stepTitle": "Apply firm pressure", "stepDescription": "Use a clean cloth or gauze and press hard on the wound." },
+      { "stepNumber": 3, "stepTitle": "Elevate the limb", "stepDescription": "If possible, raise the bleeding limb above the heart." },
+      { "stepNumber": 4, "stepTitle": "Add layers if needed", "stepDescription": "Don't remove soaked dressings. Add new ones on top and keep pressing." },
+      { "stepNumber": 5, "stepTitle": "Apply tourniquet (limb only)", "stepDescription": "If bleeding cannot be stopped, apply tourniquet 5-7 cm above the wound." },
+      { "stepNumber": 6, "stepTitle": "Monitor for shock", "stepDescription": "Keep the person warm and lying down until help arrives." }
+    ]
+  },
+  {
+    "guideId": "fa_burns",
+    "guidanceType": "burns",
+    "title": "Burns Treatment",
+    "description": "First aid for thermal, chemical, or electrical burns.",
+    "prerequisites": ["Stop the burning source", "Remove non-stuck clothing or jewelry near the burn"],
+    "warnings": [
+      "Do not apply ice directly",
+      "Do not pop blisters",
+      "Do not use butter, toothpaste, or oils"
+    ],
+    "emergencyHotline": "997",
+    "isActive": true,
+    "createdAt": "2025-01-01T00:00:00Z",
+    "updatedAt": "2025-01-01T00:00:00Z",
+    "steps": [
+      { "stepNumber": 1, "stepTitle": "Stop the burn", "stepDescription": "Remove the heat source. For chemical burns, brush off dry chemicals first." },
+      { "stepNumber": 2, "stepTitle": "Cool with water", "stepDescription": "Run cool (not cold) water over the burn for 10-20 minutes." },
+      { "stepNumber": 3, "stepTitle": "Cover loosely", "stepDescription": "Use sterile non-stick dressing or clean cloth." },
+      { "stepNumber": 4, "stepTitle": "Pain relief", "stepDescription": "If conscious, offer over-the-counter pain medication." },
+      { "stepNumber": 5, "stepTitle": "Seek medical care", "stepDescription": "Call 997 for burns larger than the palm, on face/hands/genitals, or with charred skin." }
+    ]
+  },
+  {
+    "guideId": "fa_shock",
+    "guidanceType": "shock",
+    "title": "Shock Management",
+    "description": "Recognize and treat shock — pale skin, rapid pulse, confusion, weakness.",
+    "prerequisites": ["Identify cause if possible (bleeding, burn, allergy)"],
+    "warnings": [
+      "Do not give food or drink",
+      "Do not move person if spinal injury suspected"
+    ],
+    "emergencyHotline": "997",
+    "isActive": true,
+    "createdAt": "2025-01-01T00:00:00Z",
+    "updatedAt": "2025-01-01T00:00:00Z",
+    "steps": [
+      { "stepNumber": 1, "stepTitle": "Lay the person down", "stepDescription": "Position on their back on a flat surface." },
+      { "stepNumber": 2, "stepTitle": "Elevate the legs", "stepDescription": "Raise legs about 30 cm — unless head, neck, back, or leg injury." },
+      { "stepNumber": 3, "stepTitle": "Keep them warm", "stepDescription": "Cover with a blanket. Do not overheat." },
+      { "stepNumber": 4, "stepTitle": "Treat visible injuries", "stepDescription": "Stop bleeding, immobilize fractures." },
+      { "stepNumber": 5, "stepTitle": "Monitor breathing", "stepDescription": "Be ready to start CPR if breathing stops." },
+      { "stepNumber": 6, "stepTitle": "Call for help", "stepDescription": "Dial 997 immediately." }
+    ]
+  }
+]

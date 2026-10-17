@@ -1,0 +1,15 @@
+.idea/
+**/.idea/
+**/.dart_tool/
+**/build/
+**/.flutter-plugins-dependencies
+**/.plugin_symlinks/
+**/ephemeral/
+**/__pycache__/
+**/*.pyc
+**/.venv/
+**/venv/
+**/uploads/
+.env
+.env.*
+!.env.example
